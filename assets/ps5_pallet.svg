@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="palletBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0806" />
+      <stop offset="50%" stop-color="#140f0b" />
+      <stop offset="100%" stop-color="#080705" />
+    </linearGradient>
+
+    <!-- Scanner Laser Gradient -->
+    <linearGradient id="laserBeam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f2792a" stop-opacity="0.1" />
+      <stop offset="50%" stop-color="#ff3b30" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#f2792a" stop-opacity="0.1" />
+    </linearGradient>
+
+    <!-- Inspection Grid -->
+    <pattern id="palletGrid" width="35" height="35" patternUnits="userSpaceOnUse">
+      <path d="M 35 0 L 0 0 0 35" fill="none" stroke="rgba(242, 121, 42, 0.08)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="480" fill="url(#palletBg)"/>
+  <rect width="800" height="480" fill="url(#palletGrid)"/>
+
+  <!-- Shop Floor Perspective Grid -->
+  <g opacity="0.3" stroke="#f2792a" stroke-width="0.75">
+    <line x1="0" y1="450" x2="800" y2="450" />
+    <line x1="0" y1="410" x2="800" y2="410" />
+    <line x1="0" y1="370" x2="800" y2="370" />
+    <line x1="80" y1="480" x2="220" y2="350" />
+    <line x1="260" y1="480" x2="340" y2="350" />
+    <line x1="540" y1="480" x2="460" y2="350" />
+    <line x1="720" y1="480" x2="580" y2="350" />
+  </g>
+
+  <!-- Wooden Pallet Base -->
+  <g transform="translate(360, 370)">
+    <!-- Pallet Skids & Top Deck -->
+    <polygon points="-140,-10 140,-10 160,20 -160,20" fill="#2a1f14" stroke="#f2792a" stroke-width="1.5"/>
+    <rect x="-150" y="20" width="300" height="14" rx="2" fill="#3e2d1d" stroke="#5a422a"/>
+    <rect x="-130" y="34" width="40" height="18" fill="#23190f"/>
+    <rect x="-20" y="34" width="40" height="18" fill="#23190f"/>
+    <rect x="90" y="34" width="40" height="18" fill="#23190f"/>
+  </g>
+
+  <!-- Stacked Boxes with Holographic Bounding Boxes -->
+  <!-- Layer 1 -->
+  <g transform="translate(360, 310)">
+    <!-- Box 1 -->
+    <rect x="-135" y="0" width="85" height="55" rx="3" fill="#1e1812" stroke="rgba(242, 121, 42, 0.4)"/>
+    <!-- Box 2 -->
+    <rect x="-45" y="0" width="90" height="55" rx="3" fill="#221b14" stroke="rgba(242, 121, 42, 0.4)"/>
+    <!-- Box 3 -->
+    <rect x="50" y="0" width="85" height="55" rx="3" fill="#1e1812" stroke="rgba(242, 121, 42, 0.4)"/>
+  </g>
+
+  <!-- Layer 2 -->
+  <g transform="translate(360, 250)">
+    <!-- Box 4 -->
+    <rect x="-130" y="0" width="130" height="55" rx="3" fill="#251c14" stroke="rgba(242, 121, 42, 0.4)"/>
+    <!-- Box 5 -->
+    <rect x="5" y="0" width="125" height="55" rx="3" fill="#221a13" stroke="rgba(242, 121, 42, 0.4)"/>
+  </g>
+
+  <!-- Layer 3 (Active Inspection Target) -->
+  <g transform="translate(360, 190)">
+    <!-- Box 6 (Correct) -->
+    <rect x="-135" y="0" width="85" height="55" rx="3" fill="#1f1811" stroke="#00e5ff" stroke-width="1.5"/>
+    <text x="-92" y="32" text-anchor="middle" fill="#00e5ff" font-family="monospace" font-size="9">PASS [OK]</text>
+
+    <!-- Box 7 (Target under Vision Scanner with Barcode Anomaly) -->
+    <rect x="-45" y="0" width="90" height="55" rx="3" fill="#2c1f15" stroke="#ff3b30" stroke-width="2"/>
+    <!-- Simulated Barcode -->
+    <g transform="translate(-25, 20)">
+      <line x1="0" y1="0" x2="0" y2="15" stroke="#fff" stroke-width="2"/>
+      <line x1="4" y1="0" x2="4" y2="15" stroke="#fff" stroke-width="1"/>
+      <line x1="7" y1="0" x2="7" y2="15" stroke="#fff" stroke-width="3"/>
+      <line x1="12" y1="0" x2="12" y2="15" stroke="#fff" stroke-width="1"/>
+      <line x1="15" y1="0" x2="15" y2="15" stroke="#fff" stroke-width="2"/>
+      <line x1="20" y1="0" x2="20" y2="15" stroke="#fff" stroke-width="1.5"/>
+    </g>
+    <!-- Anomaly Reticle -->
+    <rect x="-48" y="-3" width="96" height="61" fill="none" stroke="#ff3b30" stroke-dasharray="4,3" stroke-width="1.5"/>
+    <text x="0" y="-8" text-anchor="middle" fill="#ff3b30" font-family="'Oxanium', sans-serif" font-size="10" font-weight="bold">LABEL SKEW DETECTED</text>
+
+    <!-- Box 8 -->
+    <rect x="50" y="0" width="85" height="55" rx="3" fill="#1f1811" stroke="#00e5ff" stroke-width="1.5"/>
+    <text x="92" y="32" text-anchor="middle" fill="#00e5ff" font-family="monospace" font-size="9">PASS [OK]</text>
+  </g>
+
+  <!-- Overhead Optical Inspection Camera & Laser Scanning Rig -->
+  <g transform="translate(360, 60)">
+    <!-- Crossbeam Gantry -->
+    <rect x="-240" y="0" width="480" height="14" rx="3" fill="#1e1813" stroke="#f2792a" stroke-width="1.2"/>
+    
+    <!-- Central Multi-Spectral Camera Unit -->
+    <g transform="translate(0, 14)">
+      <rect x="-35" y="0" width="70" height="35" rx="4" fill="#140f0c" stroke="#ffb347" stroke-width="1.5"/>
+      <circle cx="0" cy="18" r="10" fill="#0d0a07" stroke="#00e5ff" stroke-width="2"/>
+      <circle cx="0" cy="18" r="4" fill="#00e5ff"/>
+      <!-- Laser Projection Fan targeting the boxes -->
+      <polygon points="0,28 -160,260 160,260" fill="url(#laserBeam)" opacity="0.45"/>
+      <line x1="-160" y1="260" x2="160" y2="260" stroke="#ff3b30" stroke-width="2" opacity="0.9"/>
+    </g>
+
+    <!-- Angled Camera Left (OCR & Barcode Reader) -->
+    <g transform="translate(-180, 14) rotate(-20)">
+      <rect x="-20" y="0" width="40" height="24" rx="3" fill="#140f0c" stroke="#f2792a"/>
+      <circle cx="0" cy="12" r="6" fill="#00e5ff"/>
+      <!-- Conical Beam -->
+      <polygon points="0,20 -40,180 30,180" fill="rgba(0, 229, 255, 0.15)"/>
+    </g>
+
+    <!-- Angled Camera Right (Volumetric & Overhang Sensor) -->
+    <g transform="translate(180, 14) rotate(20)">
+      <rect x="-20" y="0" width="40" height="24" rx="3" fill="#140f0c" stroke="#f2792a"/>
+      <circle cx="0" cy="12" r="6" fill="#00e5ff"/>
+      <!-- Conical Beam -->
+      <polygon points="0,20 -30,180 40,180" fill="rgba(0, 229, 255, 0.15)"/>
+    </g>
+  </g>
+
+  <!-- Inspection Dashboard / HUD HUD Overlays -->
+  <g>
+    <!-- Left Telemetry Panel -->
+    <rect x="40" y="140" width="170" height="130" rx="6" fill="rgba(20, 16, 12, 0.9)" stroke="rgba(242, 121, 42, 0.4)" stroke-width="1.2"/>
+    <text x="52" y="162" fill="#ffb347" font-family="'Oxanium', sans-serif" font-size="11" font-weight="bold">LAYER ENVELOPE</text>
+    <text x="52" y="180" fill="rgba(240, 230, 210, 0.8)" font-family="monospace" font-size="9">STACK HEIGHT: 1.48m</text>
+    <text x="52" y="196" fill="rgba(240, 230, 210, 0.8)" font-family="monospace" font-size="9">TILT ANGLE: 0.4 deg [OK]</text>
+    <text x="52" y="212" fill="rgba(240, 230, 210, 0.8)" font-family="monospace" font-size="9">OVERHANG: 2mm [PASS]</text>
+    <text x="52" y="245" fill="#00e5ff" font-family="monospace" font-size="10" font-weight="bold">INTEGRITY: 99.4%</text>
+
+    <!-- Right Telemetry Panel -->
+    <rect x="590" y="140" width="170" height="130" rx="6" fill="rgba(20, 16, 12, 0.9)" stroke="rgba(255, 59, 48, 0.5)" stroke-width="1.2"/>
+    <text x="602" y="162" fill="#ff3b30" font-family="'Oxanium', sans-serif" font-size="11" font-weight="bold">BARCODE &amp; OCR QA</text>
+    <text x="602" y="180" fill="rgba(240, 230, 210, 0.8)" font-family="monospace" font-size="9">SKU: IND-CARTON-44</text>
+    <text x="602" y="196" fill="#ff3b30" font-family="monospace" font-size="9">SKEW: +14.2 deg (LIMIT 5)</text>
+    <text x="602" y="212" fill="rgba(240, 230, 210, 0.8)" font-family="monospace" font-size="9">REJECT GATE: ACTIVATED</text>
+    <text x="602" y="245" fill="#ff3b30" font-family="monospace" font-size="10" font-weight="bold">STATUS: HOLD DISPATCH</text>
+
+    <!-- Tech Corner Frame Marks -->
+    <path d="M 25 35 L 45 35 M 25 35 L 25 55" stroke="#f2792a" stroke-width="2" fill="none"/>
+    <path d="M 775 35 L 755 35 M 775 35 L 775 55" stroke="#f2792a" stroke-width="2" fill="none"/>
+    <path d="M 25 445 L 45 445 M 25 445 L 25 425" stroke="#f2792a" stroke-width="2" fill="none"/>
+    <path d="M 775 445 L 755 445 M 775 445 L 775 425" stroke="#f2792a" stroke-width="2" fill="none"/>
+  </g>
+</svg>

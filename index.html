@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CONCEPTIA '26 | Official Problem Statements Reveal | ARMS BMSIT</title>
+  <meta name="description" content="Official Problem Statement Reveal for CONCEPTIA '26 - ARMS BMSIT Ideathon. Explore all 5 robotics and automation challenge statements." />
+  <meta name="theme-color" content="#0d0b09" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+
+  <!-- Fonts & Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@500;600;700;800;900&family=Oxanium:wght@400;500;600;700;800;900&family=Rajdhani:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="focused-ps-page">
+
+  <!-- Ambient Grid & Scanlines Overlays -->
+  <div class="cyber-grid-overlay" aria-hidden="true"></div>
+  <div class="scanline-overlay" aria-hidden="true"></div>
+
+  <!-- Ambient Portal Glow in Background -->
+  <div class="ambient-portal-bg" aria-hidden="true">
+    <img src="assets/conceptia-hero-portal.jpg" alt="" class="ambient-portal-img" />
+    <div class="ambient-radial-vignette"></div>
+  </div>
+
+  <!-- ========================================================================
+       TOP HEADER / NAVIGATION
+       ======================================================================== -->
+  <header class="site-header scrolled" id="siteHeader">
+    <div class="container nav-container">
+      <!-- Logos & Title -->
+      <div class="brand-group">
+        <div class="brand-logos">
+          <img src="assets/A.R.M.S.png" alt="ARMS Club Logo" class="brand-logo-img" />
+          <div class="brand-divider"></div>
+          <img src="assets/bmsit.png" alt="BMSIT Logo" class="brand-logo-img" />
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">
+            CONCEPTIA <span class="text-orange">'26</span>
+            <span class="brand-badge">OFFICIAL REVEAL</span>
+          </span>
+          <span class="brand-sub">ARMS • BMSIT&amp;M Bengaluru</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       REVEAL COMMAND CENTER (HEADER & CONTROLS)
+       ======================================================================== -->
+  <main class="main-content">
+    <section class="reveal-header-section">
+      <div class="container">
+        
+        <!-- Main Title -->
+        <div class="reveal-title-wrap">
+          <h1 class="reveal-main-title">
+            PROBLEM <span class="highlight">STATEMENTS</span>
+          </h1>
+          <p class="reveal-sub-title">
+            CONCEPTIA '26 // OFFICIAL ROBOTICS &amp; AUTOMATION CHALLENGE STATEMENTS
+          </p>
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         PROBLEM STATEMENT CARDS LIST
+         ======================================================================== -->
+    <section class="ps-showcase-section">
+      <div class="container">
+        <div class="ps-grid" id="psGrid">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       MINIMALIST CYBER FOOTER
+       ======================================================================== -->
+  <footer class="site-footer-minimal">
+    <div class="container">
+      <div class="footer-minimal-inner">
+        <div class="footer-minimal-brand">
+          <img src="assets/A.R.M.S.png" alt="ARMS Logo" style="height: 28px; width: auto;" />
+          <span style="font-family: var(--font-oxanium); font-weight: 700; color: #fff; font-size: 0.9rem;">
+            CONCEPTIA '26 • ARMS BMSIT&amp;M
+          </span>
+        </div>
+
+        <div class="footer-minimal-links">
+          <a href="https://unstop.com/competitions/conceptia-26-bms-institute-of-technology-and-management-bmsitm-bangalore-1759009" target="_blank" rel="noopener noreferrer" class="footer-link">
+            Unstop Competition
+          </a>
+          <span style="color: rgba(255,255,255,0.2);">•</span>
+          <a href="https://instagram.com/arms.bmsit" target="_blank" rel="noopener noreferrer" class="footer-link">
+            Instagram @arms.bmsit
+          </a>
+          <span style="color: rgba(255,255,255,0.2);">•</span>
+          <a href="https://linkedin.com/company/arms-bmsit" target="_blank" rel="noopener noreferrer" class="footer-link">
+            LinkedIn
+          </a>
+          <span style="color: rgba(255,255,255,0.2);">•</span>
+          <a href="mailto:jagruthireddy83@gmail.com" class="footer-link">
+            Contact
+          </a>
+        </div>
+
+        <div class="terminal-ticker">
+          <span class="terminal-status-dot"></span>
+          <span>ALL 5 STATEMENTS LIVE</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- ========================================================================
+       TOAST NOTIFICATION
+       ======================================================================== -->
+  <div class="toast-notice" id="toastNotice" role="status" aria-live="polite">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-lab-orange)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    <div>
+      <div class="toast-title" id="toastTitle">NOTIFICATION</div>
+      <div class="toast-desc" id="toastDesc">Status updated</div>
+    </div>
+  </div>
+
+  <!-- Main Application Script -->
+  <script src="app.js"></script>
+</body>
+</html>

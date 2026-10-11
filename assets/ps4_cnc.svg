@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0806" />
+      <stop offset="50%" stop-color="#140f0b" />
+      <stop offset="100%" stop-color="#080705" />
+    </linearGradient>
+
+    <!-- Orange Cyber Glow -->
+    <linearGradient id="orangeGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f2792a" />
+      <stop offset="50%" stop-color="#ffb347" />
+      <stop offset="100%" stop-color="#f2792a" />
+    </linearGradient>
+
+    <!-- Cyan Accent -->
+    <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#00838f" stop-opacity="0.2" />
+    </linearGradient>
+
+    <radialGradient id="portalCenter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f2792a" stop-opacity="0.25" />
+      <stop offset="70%" stop-color="#18130e" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(242, 121, 42, 0.08)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Deep Background -->
+  <rect width="800" height="480" fill="url(#bgGrad)"/>
+  <rect width="800" height="480" fill="url(#grid)"/>
+  <circle cx="400" cy="240" r="280" fill="url(#portalCenter)"/>
+
+  <!-- Floor Perspective Grid -->
+  <g opacity="0.35" stroke="#f2792a" stroke-width="0.75">
+    <line x1="0" y1="440" x2="800" y2="440" />
+    <line x1="0" y1="400" x2="800" y2="400" />
+    <line x1="0" y1="360" x2="800" y2="360" />
+    <line x1="100" y1="480" x2="250" y2="340" />
+    <line x1="250" y1="480" x2="350" y2="340" />
+    <line x1="550" y1="480" x2="450" y2="340" />
+    <line x1="700" y1="480" x2="550" y2="340" />
+  </g>
+
+  <!-- Left CNC Machine Unit #01 -->
+  <g transform="translate(60, 110)">
+    <!-- Enclosure -->
+    <rect x="0" y="0" width="200" height="260" rx="6" fill="#15120e" stroke="rgba(242, 121, 42, 0.4)" stroke-width="1.5"/>
+    <rect x="15" y="20" width="170" height="130" rx="4" fill="#0d0b09" stroke="rgba(0, 229, 255, 0.3)" stroke-width="1"/>
+    <!-- Glass Viewport & Spindle -->
+    <circle cx="100" cy="85" r="38" fill="none" stroke="rgba(242, 121, 42, 0.3)" stroke-dasharray="4,4"/>
+    <circle cx="100" cy="85" r="18" fill="#201a14" stroke="#ffb347" stroke-width="2"/>
+    <line x1="100" y1="50" x2="100" y2="85" stroke="#ffb347" stroke-width="4"/>
+    <!-- Status Light Bar -->
+    <rect x="15" y="165" width="170" height="6" rx="3" fill="#00e5ff" opacity="0.9"/>
+    <!-- Telemetry Display -->
+    <rect x="25" y="185" width="150" height="55" rx="3" fill="#0a0806" stroke="rgba(255, 255, 255, 0.1)"/>
+    <text x="35" y="202" fill="#ffb347" font-family="monospace" font-size="11" font-weight="bold">CNC-01 // ACTIVE</text>
+    <text x="35" y="218" fill="rgba(240, 230, 210, 0.7)" font-family="monospace" font-size="9">RPM: 12,400 | LOAD: 64%</text>
+    <text x="35" y="230" fill="rgba(0, 229, 255, 0.8)" font-family="monospace" font-size="9">CYCLE REMAIN: 01:24s</text>
+  </g>
+
+  <!-- Right CNC Machine Unit #02 -->
+  <g transform="translate(540, 110)">
+    <!-- Enclosure -->
+    <rect x="0" y="0" width="200" height="260" rx="6" fill="#15120e" stroke="rgba(242, 121, 42, 0.4)" stroke-width="1.5"/>
+    <rect x="15" y="20" width="170" height="130" rx="4" fill="#0d0b09" stroke="rgba(0, 229, 255, 0.3)" stroke-width="1"/>
+    <!-- Chuck & Part -->
+    <circle cx="100" cy="85" r="38" fill="none" stroke="rgba(242, 121, 42, 0.3)" stroke-dasharray="4,4"/>
+    <polygon points="90,75 110,75 105,95 95,95" fill="#e0a060" stroke="#f2792a" stroke-width="1.5"/>
+    <!-- Status Light Bar (Awaiting swap) -->
+    <rect x="15" y="165" width="170" height="6" rx="3" fill="#f2792a" opacity="0.9"/>
+    <!-- Telemetry Display -->
+    <rect x="25" y="185" width="150" height="55" rx="3" fill="#0a0806" stroke="rgba(255, 255, 255, 0.1)"/>
+    <text x="35" y="202" fill="#f2792a" font-family="monospace" font-size="11" font-weight="bold">CNC-02 // READY SWAP</text>
+    <text x="35" y="218" fill="rgba(240, 230, 210, 0.7)" font-family="monospace" font-size="9">PART #B-902 COMPLETED</text>
+    <text x="35" y="230" fill="rgba(242, 121, 42, 0.9)" font-family="monospace" font-size="9">ROBOT DISPATCH REQ</text>
+  </g>
+
+  <!-- Central Tending Robot (6-Axis Articulated) -->
+  <g transform="translate(400, 370)">
+    <!-- Heavy Pedestal Base -->
+    <ellipse cx="0" cy="0" rx="60" ry="18" fill="#1c1712" stroke="#f2792a" stroke-width="2"/>
+    <rect x="-40" y="-35" width="80" height="35" rx="4" fill="#251e18" stroke="rgba(242, 121, 42, 0.5)"/>
+    <!-- Rotating Turntable J1 -->
+    <ellipse cx="0" cy="-35" rx="35" ry="10" fill="#2e251e" stroke="#ffb347"/>
+    
+    <!-- Lower Arm J2 -->
+    <line x1="0" y1="-35" x2="-25" y2="-120" stroke="#1c1712" stroke-width="28" stroke-linecap="round"/>
+    <line x1="0" y1="-35" x2="-25" y2="-120" stroke="#f2792a" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="-25" cy="-120" r="14" fill="#2d231a" stroke="#ffb347" stroke-width="2"/>
+
+    <!-- Upper Arm J3 extending towards CNC-02 -->
+    <line x1="-25" y1="-120" x2="60" y2="-190" stroke="#1c1712" stroke-width="20" stroke-linecap="round"/>
+    <line x1="-25" y1="-120" x2="60" y2="-190" stroke="#ffb347" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="60" cy="-190" r="10" fill="#2d231a" stroke="#f2792a" stroke-width="2"/>
+
+    <!-- Dual-Gripper Wrist Assembly J4-J6 -->
+    <g transform="translate(60, -190) rotate(25)">
+      <rect x="-10" y="-8" width="20" height="16" fill="#3a2f26" stroke="#ffb347"/>
+      <!-- Gripper A (Holding Raw Billet) -->
+      <g transform="translate(18, -12)">
+        <path d="M 0 0 L 15 -6 L 15 6 Z" fill="#f2792a"/>
+        <rect x="15" y="-10" width="18" height="20" fill="#a0a0a0" stroke="#ffb347" stroke-width="1.5"/>
+      </g>
+      <!-- Gripper B (Open, ready for finished part) -->
+      <g transform="translate(18, 12)">
+        <path d="M 0 0 L 12 10 M 0 6 L 12 16" stroke="#00e5ff" stroke-width="2"/>
+      </g>
+    </g>
+
+    <!-- Holographic Trajectory Path Arc -->
+    <path d="M -160 -180 Q 0 -260 160 -180" fill="none" stroke="url(#orangeGlow)" stroke-width="2" stroke-dasharray="6,4" opacity="0.8"/>
+  </g>
+
+  <!-- HUD Telemetry & Safety Zone Overlay -->
+  <g>
+    <!-- Safety Scanner Arc -->
+    <path d="M 280 370 A 130 50 0 0 1 520 370" fill="none" stroke="rgba(0, 229, 255, 0.5)" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <text x="400" y="420" text-anchor="middle" fill="rgba(0, 229, 255, 0.7)" font-family="monospace" font-size="9" letter-spacing="2">SAFETY LIDAR ZONE // CLEAR</text>
+
+    <!-- Top Center Cell Coordination Telemetry HUD -->
+    <rect x="270" y="25" width="260" height="65" rx="6" fill="rgba(20, 16, 12, 0.9)" stroke="rgba(242, 121, 42, 0.5)" stroke-width="1.2"/>
+    <text x="400" y="46" text-anchor="middle" fill="#ffb347" font-family="'Oxanium', sans-serif" font-size="13" font-weight="bold" letter-spacing="2">CELL DISPATCH ORCHESTRATOR</text>
+    <text x="400" y="64" text-anchor="middle" fill="rgba(240, 230, 210, 0.85)" font-family="monospace" font-size="10">SYNCHRONIZED SWAP: CNC-02 NEXT</text>
+    <text x="400" y="78" text-anchor="middle" fill="#00e5ff" font-family="monospace" font-size="9">UTILIZATION: ROBOT 88% | SPINDLES 92%</text>
+
+    <!-- Tech Corner Reticles -->
+    <path d="M 25 35 L 45 35 M 25 35 L 25 55" stroke="#f2792a" stroke-width="2" fill="none"/>
+    <path d="M 775 35 L 755 35 M 775 35 L 775 55" stroke="#f2792a" stroke-width="2" fill="none"/>
+    <path d="M 25 445 L 45 445 M 25 445 L 25 425" stroke="#f2792a" stroke-width="2" fill="none"/>
+    <path d="M 775 445 L 755 445 M 775 445 L 775 425" stroke="#f2792a" stroke-width="2" fill="none"/>
+  </g>
+</svg>
