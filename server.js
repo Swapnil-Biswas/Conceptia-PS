@@ -20,7 +20,7 @@ const MIME_TYPES = {
   '.ttf': 'font/ttf'
 };
 
-const server = http.createServer((req, res) => {
+const handler = (req, res) => {
   // Normalize URL
   const cleanUrl = req.url.split('?')[0];
   let filePath = path.join(__dirname, cleanUrl === '/' ? 'index.html' : cleanUrl);
@@ -44,11 +44,16 @@ const server = http.createServer((req, res) => {
     const stream = fs.createReadStream(filePath);
     stream.pipe(res);
   });
-});
+};
 
-server.listen(PORT, () => {
-  console.log(`\n======================================================`);
-  console.log(`🚀 CONCEPTIA '26 - PROBLEM STATEMENT REVEAL PORTAL`);
-  console.log(`📡 Local Server Live at: http://localhost:${PORT}/`);
-  console.log(`======================================================\n`);
-});
+if (require.main === module) {
+  const server = http.createServer(handler);
+  server.listen(PORT, () => {
+    console.log(`\n======================================================`);
+    console.log(`🚀 CONCEPTIA '26 - PROBLEM STATEMENT REVEAL PORTAL`);
+    console.log(`📡 Local Server Live at: http://localhost:${PORT}/`);
+    console.log(`======================================================\n`);
+  });
+}
+
+module.exports = handler;

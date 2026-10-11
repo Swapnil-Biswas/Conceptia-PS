@@ -2,7 +2,6 @@
   "name": "conceptia-problem-statements-reveal",
   "version": "1.0.0",
   "description": "CONCEPTIA '26 ARMS BMSIT Ideathon - Official Problem Statements Reveal Website",
-  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js"
