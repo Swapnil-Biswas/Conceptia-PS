@@ -277,11 +277,11 @@ class CyberAudioEngine {
 const audio = new CyberAudioEngine();
 
 // -----------------------------------------------------------------------------
-// Scramble Text Hacker Decoding Effect
+// Advanced Cyber Glitch & Hacker Decoding Effect
 // -----------------------------------------------------------------------------
-const SCRAMBLE_CHARS = "010101XYZ_#@!$%&/\\<>[]*+~";
+const SCRAMBLE_CHARS = "010101アイウエオカキクケコサシスセソタチツテトナニヌネハヒフヘホマミムメモヤユヨラリルレロワヲンXYZ_#@!$%&/\\<>[]*+~=§±¶ΞΨΩΣ∆01";
 
-function scrambleDecrypt(element, targetText, duration = 1200, onComplete = null) {
+function scrambleDecrypt(element, targetText, duration = 1050, onComplete = null) {
   let startTime = null;
   const original = targetText;
   element.classList.add("scrambling");
@@ -290,26 +290,51 @@ function scrambleDecrypt(element, targetText, duration = 1200, onComplete = null
     if (!startTime) startTime = timestamp;
     const progress = Math.min((timestamp - startTime) / duration, 1);
     
-    // Number of revealed characters
-    const revealedLength = Math.floor(progress * original.length);
-    let output = original.substring(0, revealedLength);
+    // Eased reveal progress for natural mechanical acceleration
+    const easedProgress = Math.pow(progress, 1.25);
+    const revealedLength = Math.floor(easedProgress * original.length);
 
-    for (let i = revealedLength; i < original.length; i++) {
-      if (original[i] === " " || original[i] === "\n") {
-        output += original[i];
+    // Build resolved text with occasional stochastic neural glitch
+    let resolvedPart = "";
+    for (let i = 0; i < revealedLength; i++) {
+      const char = original[i];
+      if (char !== " " && char !== "\n" && progress < 0.92 && Math.random() < 0.04) {
+        resolvedPart += SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
       } else {
-        const randChar = SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
-        output += randChar;
+        resolvedPart += char;
       }
     }
 
-    element.textContent = output;
+    // Leading active decryption cursor
+    let leadChar = "";
+    if (revealedLength < original.length) {
+      const activeChar = original[revealedLength];
+      leadChar = (activeChar === " " || activeChar === "\n") ? activeChar : SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
+    }
+
+    // Scrambled trailing block with high-entropy cyber glyphs
+    let scrambledPart = "";
+    for (let i = revealedLength + 1; i < original.length; i++) {
+      const char = original[i];
+      if (char === " " || char === "\n") {
+        scrambledPart += char;
+      } else {
+        scrambledPart += SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
+      }
+    }
+
+    // Render multi-layer glitch DOM
+    element.innerHTML = `<span class="decode-resolved">${resolvedPart}</span><span class="decode-cursor">${leadChar}</span><span class="decode-scrambled">${scrambledPart}</span>`;
 
     if (progress < 1) {
       requestAnimationFrame(step);
     } else {
       element.textContent = original;
       element.classList.remove("scrambling");
+      element.classList.add("glitch-snap");
+      setTimeout(() => {
+        element.classList.remove("glitch-snap");
+      }, 400);
       if (onComplete) onComplete();
     }
   }
@@ -458,7 +483,7 @@ window.triggerDecryption = function(id, isAuto = false) {
 
   const card = document.getElementById(`ps-card-${id}`);
   if (card) {
-    card.classList.add("in-view", "decrypted");
+    card.classList.add("in-view", "decrypted", "decrypting");
     card.classList.remove("pending-decrypt");
   }
 
@@ -469,8 +494,9 @@ window.triggerDecryption = function(id, isAuto = false) {
   const titleEl = document.getElementById(`ps-title-${id}`);
 
   if (descEl) {
-    scrambleDecrypt(descEl, item.statement, 950, () => {
+    scrambleDecrypt(descEl, item.statement, 1050, () => {
       audio.playSuccessChord();
+      if (card) card.classList.remove("decrypting");
       if (!isAuto) {
         showToast("DECRYPTION SUCCESSFUL", `${item.code} verified and unlocked.`);
       }
@@ -478,7 +504,7 @@ window.triggerDecryption = function(id, isAuto = false) {
   }
 
   if (titleEl) {
-    scrambleDecrypt(titleEl, item.title, 500);
+    scrambleDecrypt(titleEl, item.title, 550);
   }
 };
 

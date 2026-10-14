@@ -1256,11 +1256,132 @@ body {
   position: relative;
 }
 
-/* Encrypted scramble state */
+/* ==========================================================================
+   ADVANCED CYBER GLITCH & HACKER DECODING ANIMATION
+   ========================================================================== */
 .scrambling {
-  font-family: var(--font-mono);
+  font-family: var(--font-mono) !important;
   color: var(--color-lab-orange);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  animation: cyberJitter 0.14s infinite alternate;
+  will-change: transform, text-shadow;
+}
+
+.scrambling .decode-resolved {
+  color: var(--color-lab-cream);
+  text-shadow: 0 0 8px rgba(242, 121, 42, 0.45);
+  font-family: var(--font-body);
+  transition: color 0.15s ease;
+}
+
+.scrambling .decode-cursor {
+  display: inline-block;
+  color: #fff;
+  background: var(--color-lab-orange);
+  box-shadow: 
+    0 0 10px var(--color-lab-orange), 
+    0 0 20px rgba(255, 179, 71, 0.85),
+    0 0 35px rgba(242, 121, 42, 0.6);
+  padding: 0 4px;
+  margin: 0 1px;
+  font-weight: 800;
+  border-radius: 2px;
+  animation: cursorPulse 0.14s infinite alternate;
+  vertical-align: middle;
+  text-shadow: 0 0 8px #fff;
+}
+
+.scrambling .decode-scrambled {
+  color: var(--color-lab-orange);
+  text-shadow: 
+    -1.5px 0 1px rgba(0, 183, 215, 0.85),
+    1.5px 0 1px rgba(255, 59, 48, 0.85),
+    0 0 12px rgba(242, 121, 42, 0.7);
+  opacity: 0.95;
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+}
+
+/* Micro-Jitter & Chromatic Aberration Keyframes */
+@keyframes cyberJitter {
+  0% {
+    transform: translate(0, 0) skewX(0deg);
+  }
+  20% {
+    transform: translate(-1px, 0.5px) skewX(-0.6deg);
+  }
+  40% {
+    transform: translate(1px, -0.5px) skewX(0.6deg);
+  }
+  60% {
+    transform: translate(-0.5px, -0.5px) skewX(-0.3deg);
+  }
+  80% {
+    transform: translate(0.5px, 0.5px) skewX(0.3deg);
+  }
+  100% {
+    transform: translate(0, 0) skewX(0deg);
+  }
+}
+
+@keyframes cursorPulse {
+  0% {
+    opacity: 0.85;
+    transform: scale(0.96);
+    filter: brightness(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.08);
+    filter: brightness(1.4);
+  }
+}
+
+/* Decryption Complete Snap Flash Effect */
+.glitch-snap {
+  animation: glitchSnapFlash 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes glitchSnapFlash {
+  0% {
+    text-shadow: -3px 0 2px #00b7d7, 3px 0 2px #f2792a, 0 0 20px #fff;
+    filter: brightness(1.5);
+    transform: scale(1.01);
+  }
+  40% {
+    text-shadow: 2px 0 1px #00b7d7, -2px 0 1px #f2792a, 0 0 12px var(--color-lab-orange);
+    filter: brightness(1.25);
+  }
+  100% {
+    text-shadow: none;
+    filter: none;
+    transform: scale(1);
+  }
+}
+
+/* Card Hologram Glitch while Decrypting */
+.ps-card.decrypting {
+  border-color: rgba(242, 121, 42, 0.95) !important;
+  box-shadow: 
+    0 0 30px rgba(242, 121, 42, 0.45), 
+    0 0 65px rgba(0, 183, 215, 0.25),
+    inset 0 0 25px rgba(242, 121, 42, 0.18) !important;
+  animation: cardDecryptionPulse 0.35s infinite alternate;
+}
+
+@keyframes cardDecryptionPulse {
+  0% {
+    border-color: rgba(242, 121, 42, 0.7);
+  }
+  50% {
+    border-color: rgba(0, 183, 215, 0.9);
+  }
+  100% {
+    border-color: rgba(242, 121, 42, 1);
+  }
 }
 
 /* Tech Highlights / Tags */
@@ -2170,6 +2291,18 @@ body {
 .reveal-main-title .highlight {
   color: var(--color-lab-orange);
   text-shadow: 0 0 30px rgba(242, 121, 42, 0.65);
+}
+
+.reveal-main-title:hover {
+  animation: titleCyberGlitch 0.4s ease;
+}
+
+@keyframes titleCyberGlitch {
+  0% { transform: none; }
+  20% { transform: translate(-2px, 1px) skewX(-1.5deg); text-shadow: -3px 0 #00b7d7, 3px 0 #ff3b30, 0 0 35px rgba(242, 121, 42, 0.8); }
+  45% { transform: translate(2px, -1px) skewX(1.5deg); text-shadow: 3px 0 #00b7d7, -3px 0 #f2792a, 0 0 40px rgba(242, 121, 42, 0.9); }
+  70% { transform: translate(-1px, 0.5px); text-shadow: -1.5px 0 #00b7d7, 1.5px 0 #ff3b30; }
+  100% { transform: none; }
 }
 
 .reveal-sub-title {
